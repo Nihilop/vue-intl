@@ -709,10 +709,10 @@ function plugin(Vue) {
     vue.$currency = formatCurrency;
     vue.$relativeDate = relativeDate;
 
-    Vue.filter('date', function(date, format, timezone) { vue.$date(date, format, timezone); });
-    Vue.filter('number', function(number, fractionSize) { vue.$number(number, fractionSize); });
-    Vue.filter('currency', function(amount, currencySymbol, fractionSize) { vue.$currency(amount, currencySymbol, fractionSize); });
-    Vue.filter('relativeDate', function(date, options) { vue.$relativeDate(date, options); });
+    Vue.filter('date', function(date, format, timezone) { return vue.$date(date, format, timezone); });
+    Vue.filter('number', function(number, fractionSize) { return vue.$number(number, fractionSize); });
+    Vue.filter('currency', function(amount, currencySymbol, fractionSize) { return vue.$currency(amount, currencySymbol, fractionSize); });
+    Vue.filter('relativeDate', function(date, options) { return vue.$relativeDate(date, options); });
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
